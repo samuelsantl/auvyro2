@@ -1,0 +1,600 @@
+
+:root {
+    --background: #090909;
+    --surface: #121212;
+    --surface-light: #1b1b1b;
+    --gold: #d6ad60;
+    --gold-light: #f0d49b;
+    --white: #ffffff;
+    --muted: #a3a3a3;
+    --border: rgba(255, 255, 255, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+section {
+    padding: 110px 9%;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(9, 9, 9, 0.88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1500px;
+    margin: auto;
+    padding: 22px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 38px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-button {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 11px 20px;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    padding-top: 180px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 80% 40%,
+            rgba(214, 173, 96, 0.12),
+            transparent 45%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 88px);
+    line-height: 1.08;
+    letter-spacing: -4px;
+    font-weight: 700;
+    max-width: 900px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 520px;
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--gold);
+    color: #090909;
+}
+
+.primary-button:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    border: 1px solid var(--border);
+    color: white;
+}
+
+.secondary-button:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 100px;
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--surface);
+}
+
+.about h2 {
+    max-width: 850px;
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.about > p:last-child {
+    color: var(--muted);
+    max-width: 600px;
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* SERVICES */
+
+.services h2,
+.projects h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    letter-spacing: -2px;
+    margin-bottom: 45px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    min-height: 230px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+}
+
+.service-card span {
+    color: var(--gold);
+    font-size: 12px;
+}
+
+.service-card h3 {
+    margin-top: 45px;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* PROJECTS */
+
+.projects {
+    background: var(--surface);
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.project-image {
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.8),
+            transparent 70%
+        ),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80")
+        center / cover;
+}
+
+.project-image span {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.project-info h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: var(--muted);
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.project-info a {
+    color: var(--gold);
+    font-size: 13px;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 5px;
+}
+
+/* PRICING */
+
+.pricing {
+    background: var(--background);
+}
+
+.pricing h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    letter-spacing: -2px;
+    max-width: 700px;
+}
+
+.pricing-description {
+    color: var(--muted);
+    margin-top: 15px;
+    margin-bottom: 55px;
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    position: relative;
+    padding: 35px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+}
+
+.pricing-card.featured {
+    border-color: var(--gold);
+    background: #191610;
+}
+
+.popular-label {
+    position: absolute;
+    top: -13px;
+    right: 20px;
+    background: var(--gold);
+    color: #090909;
+    padding: 5px 12px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.plan-name {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.pricing-card h3 {
+    font-size: 43px;
+    margin-top: 20px;
+    letter-spacing: -2px;
+}
+
+.plan-description {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin: 30px 0;
+    flex-grow: 1;
+}
+
+.pricing-card li {
+    color: #d0d0d0;
+    font-size: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.pricing-card li::before {
+    content: "✓";
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+.pricing-button {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.pricing-button:hover {
+    background: var(--gold);
+    color: #090909;
+}
+
+.featured .pricing-button {
+    background: var(--gold);
+    color: #090909;
+}
+
+.featured .pricing-button:hover {
+    background: var(--gold-light);
+}
+
+.pricing-note {
+    color: #777;
+    font-size: 11px;
+    margin-top: 30px;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(214, 173, 96, 0.10),
+            transparent 65%
+        );
+}
+
+.contact h2 {
+    font-size: clamp(35px, 6vw, 65px);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.contact > p:not(.eyebrow) {
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 9%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+footer p {
+    color: #777;
+    font-size: 11px;
+}
+
+/* MOBILE NAVIGATION AND LAYOUT */
+
+@media (max-width: 850px) {
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px 6%;
+        background: #101010;
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    section {
+        padding: 85px 7%;
+    }
+
+    .service-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        min-height: 270px;
+    }
+
+    .pricing-card {
+        padding: 35px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 140px;
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .hero-bottom {
+        font-size: 8px;
+        letter-spacing: 1px;
+        gap: 15px;
+    }
+
+    .hero-bottom span:last-child {
+        text-align: right;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+    .about h2 {
+        font-size: 34px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
